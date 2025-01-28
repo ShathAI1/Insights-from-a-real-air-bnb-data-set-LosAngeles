@@ -252,11 +252,3 @@ plt.show()
 
 
 
-# 🚨 How do I find location for the city?
-
-  - Type the city name on google maps
-  <img width="1085" alt="image" src="https://github.com/user-attachments/assets/4ecd7eb8-a10b-44e3-b29b-9ca7835bd8e9" />
-
-  - You will find latitude and longitude at the bottom of screen
-  <img width="662" alt="image" src="https://github.com/user-attachments/assets/52526950-5b14-49ee-8b5e-1c1523bc5efc" />
-  
