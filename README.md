@@ -163,6 +163,24 @@ plt.show()
 ```
 <img width="954" alt="image" src="https://github.com/user-attachments/assets/9cc68fc2-555b-41a1-9739-965465f4149e" />
 
+# Heatmap Visualization of Los Angeles Listings 🌆
+
+This heatmap displays the density of rental listings in Los Angeles.
+
+## Key Insights 🌈
+
+- **🔥 Hotter Areas (Red/Yellow)**:
+  - **High Density**: Areas in red or yellow indicate a higher concentration of listings. 
+  - **Popular Locations**: These regions are often in high demand, potentially near tourist attractions or popular neighborhoods.
+
+- **❄️ Colder Areas (Green/Blue)**:
+  - **Low Density**: Areas in blue or green indicate fewer listings available.
+  - **Less Popular Locations**: These areas may be less sought after or further from key attractions. Lower density could imply less competition, suggesting more affordable options.
+
+- **📍 Density Patterns**:
+  - **Clustered Areas**: Clusters of heatmap intensity represent hotspots, often found in high-traffic areas like resorts or urban centers.
+
+Explore the map to find where listings are most abundant! 🗺️
 
 ```python
 import folium
@@ -187,3 +205,12 @@ m.save('LosAngeles_heatmap.html')
 # If you're using Jupyter Notebook, you can display the map directly in the notebook:
 m
 ```
+<img width="996" alt="image" src="https://github.com/user-attachments/assets/92444ea3-e3e0-461c-b4d2-684b028814fa" />
+
+#🚨 How do I find location for my city?
+
+  - Type your city name on google maps
+  <img width="1085" alt="image" src="https://github.com/user-attachments/assets/4ecd7eb8-a10b-44e3-b29b-9ca7835bd8e9" />
+
+  - You will find latitude and longitude at the bottom of screen
+  <img width="662" alt="image" src="https://github.com/user-attachments/assets/52526950-5b14-49ee-8b5e-1c1523bc5efc" />
