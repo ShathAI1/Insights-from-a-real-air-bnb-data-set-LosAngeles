@@ -163,6 +163,49 @@ plt.show()
 ```
 <img width="954" alt="image" src="https://github.com/user-attachments/assets/9cc68fc2-555b-41a1-9739-965465f4149e" />
 
+# What is the relationship between price and availability of listings?
+
+The correlation between price and availability can be positive, indicating that higher-priced listings tend to be less available, or it can be negative, suggesting that lower-priced listings are more frequently available. A dark green color in the heatmap typically represents a strong positive correlation, while lighter colors indicate weaker or negative relationships.
+
+```python
+# Calculate the correlation matrix
+correlation_matrix = listings[['price', 'availability_365']].corr()
+
+# Create a heatmap to visualize the correlation
+plt.figure(figsize=(8, 6))
+sns.heatmap(correlation_matrix, annot=True, cmap='YlGn', fmt='.2f', 
+            linewidths=0.5, linecolor='darkolivegreen')
+
+plt.title('Correlation Heatmap between Price and Availability')
+plt.show()
+```
+<img width="636" alt="image" src="https://github.com/user-attachments/assets/c4c84791-f747-466f-8864-3d15b562c407" />
+
+# What is the average price distribution among different room types in the listings?
+
+Calculates and visualizes the average price distribution among different room types in listings using a pie chart, showing each type's contribution as a percentage of the total average price.
+
+```python
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# Load your data
+listings = pd.read_csv('/Users/shatha/Downloads/listings.csv')
+
+# Calculate average price by room type
+average_price = listings.groupby('room_type')['price'].mean().reset_index()
+
+# Visualization using a pie chart
+plt.figure(figsize=(8, 8))
+colors = ['darkolivegreen', 'darkkhaki', 'olive']  # Specify colors
+plt.pie(average_price['price'], labels=average_price['room_type'], 
+        autopct='%1.1f%%', startangle=140, colors=colors)
+plt.title('Average Price Distribution by Room Type')
+plt.axis('equal')  # Equal aspect ratio ensures that pie is drawn as a circle.
+plt.show()
+```
+<img width="816" alt="image" src="https://github.com/user-attachments/assets/b53351c2-34a1-43ac-a372-3751c1710fd6" />
+
 # Heatmap Visualization of Los Angeles Listings 🌆
 
 This heatmap displays the density of rental listings in Los Angeles.
@@ -206,49 +249,6 @@ m.save('LosAngeles_heatmap.html')
 m
 ```
 <img width="996" alt="image" src="https://github.com/user-attachments/assets/92444ea3-e3e0-461c-b4d2-684b028814fa" />
-
-# What is the relationship between price and availability of listings?
-
-The correlation between price and availability can be positive, indicating that higher-priced listings tend to be less available, or it can be negative, suggesting that lower-priced listings are more frequently available. A dark green color in the heatmap typically represents a strong positive correlation, while lighter colors indicate weaker or negative relationships.
-
-```python
-# Calculate the correlation matrix
-correlation_matrix = listings[['price', 'availability_365']].corr()
-
-# Create a heatmap to visualize the correlation
-plt.figure(figsize=(8, 6))
-sns.heatmap(correlation_matrix, annot=True, cmap='YlGn', fmt='.2f', 
-            linewidths=0.5, linecolor='darkolivegreen')
-
-plt.title('Correlation Heatmap between Price and Availability')
-plt.show()
-```
-<img width="636" alt="image" src="https://github.com/user-attachments/assets/c4c84791-f747-466f-8864-3d15b562c407" />
-
-# What is the average price distribution among different room types in the listings?
-
-Calculates and visualizes the average price distribution among different room types in listings using a pie chart, showing each type's contribution as a percentage of the total average price.
-
-```python
-import pandas as pd
-import matplotlib.pyplot as plt
-
-# Load your data
-listings = pd.read_csv('/Users/shatha/Downloads/listings.csv')
-
-# Calculate average price by room type
-average_price = listings.groupby('room_type')['price'].mean().reset_index()
-
-# Visualization using a pie chart
-plt.figure(figsize=(8, 8))
-colors = ['darkolivegreen', 'darkkhaki', 'olive']  # Specify colors
-plt.pie(average_price['price'], labels=average_price['room_type'], 
-        autopct='%1.1f%%', startangle=140, colors=colors)
-plt.title('Average Price Distribution by Room Type')
-plt.axis('equal')  # Equal aspect ratio ensures that pie is drawn as a circle.
-plt.show()
-```
-<img width="816" alt="image" src="https://github.com/user-attachments/assets/b53351c2-34a1-43ac-a372-3751c1710fd6" />
 
 
 
